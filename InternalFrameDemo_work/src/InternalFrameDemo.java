@@ -1,4 +1,4 @@
-package components;
+// components;
 
 import javax.swing.JInternalFrame;
 import javax.swing.JDesktopPane;

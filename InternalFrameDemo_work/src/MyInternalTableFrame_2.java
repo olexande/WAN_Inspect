@@ -1,4 +1,4 @@
-package components;
+//package components;
 
 import javax.swing.JInternalFrame;
 
@@ -60,9 +60,9 @@ class ButtonPanel_2 extends JPanel
         }
         try
         {          
-            conn = DriverManager.getConnection("jdbc:mysql://192.168.1.90:3306/test?user=User&password=Password&useUnicode=true&characterEncoding=KOI8_R");
+            conn = DriverManager.getConnection("jdbc:mysql://192.168.2.224:3306/lan_db?user=landb_user&password=landb_user&useUnicode=true&characterEncoding=KOI8_R");
             Statement st = conn.createStatement();
-            ResultSet resultSet = st.executeQuery("SELECT * FROM `test`");
+            ResultSet resultSet = st.executeQuery("SELECT * FROM `Auth_Table`");
             
             try {
                 MyDatabaseTableModel model = new MyDatabaseTableModel();
