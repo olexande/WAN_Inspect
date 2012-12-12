@@ -1,4 +1,4 @@
-package components;
+//package components;
 
 import javax.swing.JInternalFrame;
 
@@ -54,7 +54,7 @@ class ButtonPanel_1 extends JPanel
         }
         try
         {          
-          conn = DriverManager.getConnection("jdbc:mysql://192.168.1.90:3306/test?user=User&password=Password");
+          conn = DriverManager.getConnection("jdbc:mysql:///192.168.2.224:3306/test?user=landb_user&password=landb_user");
           statement = conn.createStatement();    
           //nameField.get
           statement.executeUpdate("INSERT INTO `test` VALUES ('a', 'a', 'a', 'a', 'a', 'û');");

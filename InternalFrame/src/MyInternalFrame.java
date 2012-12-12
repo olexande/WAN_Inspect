@@ -1,4 +1,4 @@
-package components;
+//package components;
 
 import javax.swing.JInternalFrame;
 
@@ -104,7 +104,7 @@ class ButtonPanel extends JPanel
                    }
                    try
                    {          
-                     conn = DriverManager.getConnection("jdbc:mysql://192.168.1.90:3306/test?user=User&password=Password&useUnicode=true&characterEncoding=KOI8_R");
+                     conn = DriverManager.getConnection("jdbc:mysql://192.168.2.224:3306/lan_db?user=landb_user&password=landb_user&useUnicode=true&characterEncoding=KOI8_R");
                      /*statement = conn.createStatement();    
                      //nameField.get
                      statement.executeUpdate("INSERT INTO `test` VALUES ('a', 'a', 'a', 'a', 'a', '1');");
@@ -119,7 +119,7 @@ class ButtonPanel extends JPanel
                    try
                    {*/
                      PreparedStatement stmt = conn.prepareStatement(
-                             "UPDATE test SET " + "NV=?, KS=?, DIN=?, VIN=?, DOUT=?" + 
+                             "UPDATE Auth_Table SET " + "NV=?, KS=?, DIN=?, VIN=?, DOUT=?" + 
                              "WHERE VOUT=2");
                      stmt.setString(1, nameField.getText());
                      stmt.setString(2, "c");

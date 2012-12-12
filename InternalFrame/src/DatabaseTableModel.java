@@ -1,18 +1,16 @@
-package components;
-
 import java.util.*;
 import java.sql.*;
 import javax.swing.table.*;
 
-public class MyDatabaseTableModel extends AbstractTableModel 
+public class DatabaseTableModel extends AbstractTableModel 
 {
     private static final long serialVersionUID = 1L;
     private ArrayList<String> columnNames = new ArrayList<String>();
     private ArrayList<Class> columnTypes = new ArrayList<Class>();
     private ArrayList data = new ArrayList();
-    private Connection conn;
+    private Connection con;
     private String currentTable = "";
-    public MyDatabaseTableModel()throws SQLException, ClassNotFoundException
+    public DatabaseTableModel()throws SQLException, ClassNotFoundException
     {
     }
     public void setConnection(ResultSet rs)throws SQLException, ClassNotFoundException

@@ -1,4 +1,4 @@
-package components;
+//package components;
 
 import javax.swing.JInternalFrame;
 
@@ -20,19 +20,19 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /* Used by InternalFrameDemo.java. */
-public class MyInternalTableFrame_2 extends JInternalFrame {
+public class MyInternalTableFrame_4 extends JInternalFrame {
     static int openFrameCount = 0;
     static final int xOffset = 60, yOffset = 60;
 
-    public MyInternalTableFrame_2() {
-        super("Работники #" + (++openFrameCount), 
+    public MyInternalTableFrame_4() {
+        super("Points #" + (++openFrameCount), 
               true, //resizable
               true, //closable
               true, //maximizable
               true);//iconifiable
 
         //...Create the GUI and put it in the window...
-        ButtonPanel_2 panel = new ButtonPanel_2();
+        ButtonPanel_4 panel = new ButtonPanel_4();
         add(panel);
         //...Then set the window size or call pack...
         setSize(520, 140);
@@ -42,10 +42,10 @@ public class MyInternalTableFrame_2 extends JInternalFrame {
     }
 }
 
-class ButtonPanel_2 extends JPanel
+class ButtonPanel_4 extends JPanel
 {
     private boolean DEBUG = false;
-    public ButtonPanel_2()
+    public ButtonPanel_4()
     {
         Statement statement = null;
         ResultSet resultset;
@@ -60,9 +60,9 @@ class ButtonPanel_2 extends JPanel
         }
         try
         {          
-            conn = DriverManager.getConnection("jdbc:mysql://192.168.1.90:3306/test?user=User&password=Password&useUnicode=true&characterEncoding=KOI8_R");
+            conn = DriverManager.getConnection("jdbc:mysql://192.168.2.224:3306/lan_db?user=landb_user&password=landb_user&useUnicode=true&characterEncoding=KOI8_R");
             Statement st = conn.createStatement();
-            ResultSet resultSet = st.executeQuery("SELECT * FROM `test`");
+            ResultSet resultSet = st.executeQuery("SELECT * FROM `Auth_Table`");
             
             try {
                 MyDatabaseTableModel model = new MyDatabaseTableModel();
